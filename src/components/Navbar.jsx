@@ -33,11 +33,11 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Programs', path: '/programs' },
-    // { name: 'Events', path: '/events' },
-    // { name: 'Resources', path: '/resources' },
-    // { name: 'Success Stories', path: '/stories' },
-    // { name: 'Our Team', path: '/team' },
-    // { name: 'Contact', path: '/contact' },
+    { name: 'Events', path: '/events' },
+    { name: 'Resources', path: '/resources' },
+    { name: 'Success Stories', path: '/stories' },
+    { name: 'Our Team', path: '/team' },
+    { name: 'Contact', path: '/contact' },
   ]
 
   return (
