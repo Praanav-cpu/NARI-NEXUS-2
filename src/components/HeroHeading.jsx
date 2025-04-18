@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const HeroHeading = () => {
-  const texts = ["Empowering Women,", "Inspiring Futures . "];
+  const texts = [" In Innovation, There Is Progress.  "];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -35,7 +35,7 @@ const HeroHeading = () => {
   }, [charIndex, isDeleting, currentTextIndex, texts]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl playfair-fontfont-bold leading-tight mb-6"
+    <h1 className="  font-bold leading-tight mb-6"
     style={{ fontFamily: '"Playfair Display", serif' }}>
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
         {displayedText}
