@@ -5,6 +5,13 @@ import SectionTitle from '../components/SectionTitle'
 import Card from '../components/Card'
 import TestimonialCard from '../components/TestimonialCard'
 import GeometricBackground from '../components/GeometricBackground'
+import GeometricBackground2 from '../components/GeometricBackground2'
+import GeometricBackground3 from '../components/GeometricBackground3'
+import HeroHeading from '../components/HeroHeading'; // adjust path as needed
+
+ 
+
+
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -18,25 +25,23 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <GeometricBackground className="opacity-50" />
+         
+     
         
         <div className="container mx-auto px-4 py-32 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
-                  Empowering Women,
-                </span>
-                <br />
-                Inspiring Futures
-              </h1>
+            <HeroHeading />
+
               
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-300 mb-8" 
+              style={{ fontFamily: '"Roboto", sans-serif' }}>
                 Sanyoge Shaktih Navonnati Margah<br />
                 In Connection, There Is Strength<br />
                 In Innovation, There Is Progress.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 *:" style={{ fontFamily: '"Roboto", sans-serif' }}>
                 <Button to="/programs" size="lg">
                   Explore Programs
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -53,32 +58,29 @@ const Home = () => {
   <img src="/img/logo.png" alt="Centered Image" className="  object-contain rounded-full" />
 </div>
 
-                {/* <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-center w-full">
-                  <p className="text-lg font-semibold">Together We Rise</p>
-                </div> */}
+                
               </div>
             </div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
-        {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-          <div className="w-1 h-10 bg-gradient-to-b from-purple-500 to-transparent rounded-full"></div>
-          <p className="text-sm text-gray-400 mt-2">Scroll Down</p>
-        </div> */}
+        
+        
       </section>
 
       {/* Mission Section */}
-      {/* <section className="py-20 relative">
+        <section className="py-20 relative">
+        <GeometricBackground2 className="opacity-50 " />
         <div className="container mx-auto px-4">
+ 
           <SectionTitle 
             title="Our Mission" 
-            subtitle="Why We Exist"
+            // subtitle="Why We Exist"
             centered={true}
           />
           
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-8" style={{ fontFamily: '"Roboto", sans-serif' }}>
               Nari-Nexus is dedicated to empowering women through education, community, and innovation. 
               We create spaces where women can connect, learn, and grow together, breaking barriers and 
               building a more equitable future for all.
@@ -89,24 +91,24 @@ const Home = () => {
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Community</h3>
-                <p className="text-gray-300">Building strong networks of support and collaboration</p>
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Community</h3>
+                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Building strong networks of support and collaboration</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-orange-500 flex items-center justify-center mx-auto mb-4">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Innovation</h3>
-                <p className="text-gray-300">Fostering creative solutions to complex challenges</p>
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Innovation</h3>
+                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Fostering creative solutions to complex challenges</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Leadership</h3>
-                <p className="text-gray-300">Developing the next generation of visionary leaders</p>
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Leadership</h3>
+                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Developing the next generation of visionary leaders</p>
               </div>
             </div>
           </div>
@@ -114,7 +116,7 @@ const Home = () => {
       </section>
 
       {/* Programs Section */}
-      {/* <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20">
+       <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20">
         <GeometricBackground className="opacity-30" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -168,7 +170,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button to="/" size="lg">
+            <Button to="/Programs" size="lg">
               View All Programs
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -177,10 +179,10 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      {/* <section className="py-20 relative">
+    <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="Success Stories" 
+            title=" Testimonial" 
             subtitle="Voices of Empowerment"
             centered={true}
           />
@@ -209,12 +211,12 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button to="/" variant="secondary" size="lg">
+            <Button to="/Stories" variant="secondary" size="lg">
               Read More Stories
             </Button>
           </div>
         </div>
-      </section> */}  
+      </section>  
 
       {/* Events Section */}
       {/* <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20">
