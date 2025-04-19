@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const HeroHeading = () => {
-  const texts = [" In Innovation, There Is Progress.  "];
+  const texts = [" In Innovation , There Is Progress. In Connection, There Is Strength "];
+  
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-
+ 
   useEffect(() => {
     const current = texts[currentTextIndex];
     let typingSpeed = isDeleting ? 50 : 100;

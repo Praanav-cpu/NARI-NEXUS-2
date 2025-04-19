@@ -1,195 +1,239 @@
-import { useState, useEffect } from 'react'
-import { ArrowRight, Users, Lightbulb, Award, Sparkles, Calendar, BookOpen } from 'lucide-react'
-import Button from '../components/Button'
-import SectionTitle from '../components/SectionTitle'
-import Card from '../components/Card'
-import TestimonialCard from '../components/TestimonialCard'
-import GeometricBackground from '../components/GeometricBackground'
-import GeometricBackground2 from '../components/GeometricBackground2'
-import GeometricBackground3 from '../components/GeometricBackground3'
-import HeroHeading from '../components/HeroHeading'
+import { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  Users,
+  Lightbulb,
+  Award,
+  Sparkles,
+  Calendar,
+  BookOpen,
+} from "lucide-react";
+import Button from "../components/Button";
+import SectionTitle from "../components/SectionTitle";
+import Card from "../components/Card";
+import TestimonialCard from "../components/TestimonialCard";
+import Footer from "../components/Footer";
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import GeometricBackground from "../components/GeometricBackground";
+import GeometricBackground2 from "../components/GeometricBackground2";
+import GeometricBackground3 from "../components/GeometricBackground3";
+import HeroHeading from "../components/HeroHeading";
+
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-    
+    setIsVisible(true);
+
     // Initialize all animations
     initAnimations();
-    
+
     return () => {
       // Clean up ScrollTrigger instances
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [])
+  }, []);
 
   const initAnimations = () => {
     // Animation for major sections
-    const sections = document.querySelectorAll('.scroll-fade');
+    const sections = document.querySelectorAll(".scroll-fade");
     sections.forEach((section) => {
       // Set initial state before animation
-      gsap.set(section, { 
-        opacity: 0, 
-        y: 50 
+      gsap.set(section, {
+        opacity: 0,
+        y: 50,
       });
-      
+
       gsap.to(section, {
         scrollTrigger: {
           trigger: section,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
+          start: "top 85%",
+          toggleActions: "play none none none",
         },
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: "power3.out"
+        ease: "power3.out",
       });
     });
 
-    // Animation for mission items
-    const missionItems = document.querySelectorAll('.mission-item');
-    missionItems.forEach((item, index) => {
-      gsap.set(item, { 
-        opacity: 0, 
-        y: 30 
+    const aboutCards = document.querySelectorAll(".about-card");
+    aboutCards.forEach((card, index) => {
+      gsap.set(card, {
+        opacity: 0,
+        y: 30,
       });
-      
-      gsap.to(item, {
+
+      gsap.to(card, {
         scrollTrigger: {
-          trigger: '.mission-container',
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none none",
         },
         opacity: 1,
         y: 0,
         duration: 0.8,
         delay: index * 0.2,
-        ease: "power2.out"
+        ease: "power2.out",
+      });
+
+      // Animate the icons inside event cards
+      const icon = card.querySelector(".event-icon");
+      if (icon) {
+        gsap.from(icon, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+          scale: 0.5,
+          rotate: -10,
+          opacity: 0,
+          duration: 0.6,
+          delay: index * 0.2 + 0.2,
+          ease: "back.out(1.7)",
+        });
+      }
+    });
+
+    // Animation for mission items
+    const missionItems = document.querySelectorAll(".mission-item");
+    missionItems.forEach((item, index) => {
+      gsap.set(item, {
+        opacity: 0,
+        y: 30,
+      });
+
+      gsap.to(item, {
+        scrollTrigger: {
+          trigger: ".mission-container",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: "power2.out",
       });
     });
 
     // Animation for program cards
-    const cards = document.querySelectorAll('.program-card');
+    const cards = document.querySelectorAll(".program-card");
     cards.forEach((card, index) => {
-      gsap.set(card, { 
-        opacity: 0, 
-        y: 30 
+      gsap.set(card, {
+        opacity: 0,
+        y: 30,
       });
-      
+
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
+          start: "top 90%",
+          toggleActions: "play none none none",
         },
         opacity: 1,
         y: 0,
         duration: 0.8,
         delay: index * 0.1,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     });
-      
-      
-    const eventCards = document.querySelectorAll('.event-card');
-  eventCards.forEach((card, index) => {
-    gsap.set(card, { 
-      opacity: 0, 
-      y: 30 
-    });
-    
-    gsap.to(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: 'top 90%',
-        toggleActions: 'play none none none',
-      },
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      delay: index * 0.2,
-      ease: "power2.out"
-    });
-    
-    // Animate the icons inside event cards
-    const icon = card.querySelector('.event-icon');
-    if (icon) {
-      gsap.from(icon, {
+
+    const eventCards = document.querySelectorAll(".event-card");
+    eventCards.forEach((card, index) => {
+      gsap.set(card, {
+        opacity: 0,
+        y: 30,
+      });
+
+      gsap.to(card, {
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%',
-        },
-        scale: 0.5,
-        rotate: -10,
-        opacity: 0,
-        duration: 0.6,
-        delay: index * 0.2 + 0.2,
-        ease: "back.out(1.7)"
-      });
-    }
-  });
-  
-  // Animation for events CTA button
-  gsap.from('.events-cta', {
-    scrollTrigger: {
-      trigger: '.events-cta',
-      start: 'top 90%',
-    },
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    delay: 0.6,
-    ease: "power2.out"
-  });
- 
-    
-
-
-    // Animation for testimonials
-    const testimonials = document.querySelectorAll('.testimonial-item');
-    testimonials.forEach((testimonial, index) => {
-      gsap.set(testimonial, { 
-        opacity: 0, 
-        y: 30 
-      });
-      
-      gsap.to(testimonial, {
-        scrollTrigger: {
-          trigger: '.testimonial-container',
-          start: 'top 85%',
-          toggleActions: 'play none none none',
+          start: "top 90%",
+          toggleActions: "play none none none",
         },
         opacity: 1,
         y: 0,
         duration: 0.8,
         delay: index * 0.2,
-        ease: "power2.out"
+        ease: "power2.out",
+      });
+
+      // Animate the icons inside event cards
+      const icon = card.querySelector(".event-icon");
+      if (icon) {
+        gsap.from(icon, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+          scale: 0.5,
+          rotate: -10,
+          opacity: 0,
+          duration: 0.6,
+          delay: index * 0.2 + 0.2,
+          ease: "back.out(1.7)",
+        });
+      }
+    });
+
+    // Animation for events CTA button
+    gsap.from(".events-cta", {
+      scrollTrigger: {
+        trigger: ".events-cta",
+        start: "top 90%",
+      },
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.6,
+      ease: "power2.out",
+    });
+
+    // Animation for testimonials
+    const testimonials = document.querySelectorAll(".testimonial-item");
+    testimonials.forEach((testimonial, index) => {
+      gsap.set(testimonial, {
+        opacity: 0,
+        y: 30,
+      });
+
+      gsap.to(testimonial, {
+        scrollTrigger: {
+          trigger: ".testimonial-container",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: "power2.out",
       });
     });
 
-     
     // CTA animation
-    gsap.set('.cta-section', { 
-      opacity: 0, 
-      scale: 0.95 
+    gsap.set(".cta-section", {
+      opacity: 0,
+      scale: 0.95,
     });
-    
-    gsap.to('.cta-section', {
+
+    gsap.to(".cta-section", {
       scrollTrigger: {
-        trigger: '.cta-section',
-        start: 'top 80%',
-        toggleActions: 'play none none none',
+        trigger: ".cta-section",
+        start: "top 80%",
+        toggleActions: "play none none none",
       },
       opacity: 1,
       scale: 1,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     });
   };
 
@@ -198,11 +242,17 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <GeometricBackground className="opacity-50" />
-        
+
         <div className="container mx-auto px-4 py-32 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
-            style={{ fontFamily: '"Playfair Display", serif' }}>
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
                   Empowering Women,
@@ -211,14 +261,20 @@ const Home = () => {
                 Inspiring Futures
               </h1>
               <HeroHeading />
-              
-              <p className="text-xl text-gray-300 mb-8" 
-              style={{ fontFamily: '"Roboto", sans-serif' }}>
-                Sanyoge Shaktih Navonnati Margah<br />
-                In Connection, There Is Strength<br />
+
+              <p
+                className="text-xl text-gray-300 mb-8"
+                style={{ fontFamily: '"Roboto", sans-serif' }}
+              >
+              संयोगे शक्तिः, नवोन्नतेः मार्गः
+                <br />
+                <br />
               </p>
-              
-              <div className="flex flex-wrap gap-4 *:" style={{ fontFamily: '"Roboto", sans-serif' }}>
+
+              <div
+                className="flex flex-wrap gap-4 *:"
+                style={{ fontFamily: '"Roboto", sans-serif' }}
+              >
                 <Button to="/programs" size="lg">
                   Explore Programs
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -228,239 +284,370 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            
-            <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+
+            <div
+              className={`relative transition-all duration-1000 delay-300 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <div className="relative w-full aspect-square max-w-md mx-auto">
                 <div className="absolute inset-0 rounded-full bg-white flex items-center justify-center">
-                  <img src="/img/logo.png" alt="Centered Image" className="object-contain rounded-full" />
+                  <img
+                    src="/img/logo.png"
+                    alt="Centered Image"
+                    className="object-contain rounded-full"
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div> 
+        </div>
+      </section>
+               
+         {/* About */}
+
+         <section id="about" className="relative py-20 overflow-hidden">
+
+        <GeometricBackground3 className="opacity-40" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
+              About Nari-Nexus
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              We’re not waiting for doors to open we’re building our own.
+            </p>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionTitle
+                title="Our Story"
+                subtitle="How We Started"
+                titleGradient="from-pink-500 to-purple-600"
+              />
+
+              <p className="text-gray-300 mb-6">
+                A belief that women belong in tech not just as participants, but
+                as leaders, innovators, and changemakers.
+              </p>
+
+              <p className="text-gray-300 mb-6">
+                We’re a community-driven initiative created to bridge the gender
+                divide in technology by offering opportunities for learning,
+                growth, and leadership while welcoming allies who share our
+                vision for a more inclusive tech world.
+              </p>
+
+              <p className="text-gray-300">
+                Through nationwide hackathons, workshops, mentorship circles,
+                and community events, we’re creating space for skill-building,
+                confidence-boosting, and voice-lifting.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="aspect-square max-w-md mx-auto bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500 rounded-2xl p-1">
+                <div className="w-full h-full bg-black rounded-xl overflow-hidden">
+                  <img
+                    src="img/Kritika.jpg"
+                    alt="Nari-Nexus founding members"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-600/30 rounded-xl rotate-12"></div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-orange-500/30 rounded-xl -rotate-12"></div>
+            </div>
+          </div>
+          
+        </div>
+        
       </section>
 
-      {/* Mission Section */}
+      {/* Our Story */}
+      {/* <section className="py-20">
+         
+      </section> */}
+
+
+
+
+       
       <section className="py-20 relative scroll-fade">
         <GeometricBackground2 className="opacity-50" />
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Our Mission" 
-            centered={true}
-          />
-          
+          <SectionTitle title="Our Mission" centered={true} />
+
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl text-gray-300 mb-8" style={{ fontFamily: '"Roboto", sans-serif' }}>
-              Nari-Nexus is dedicated to empowering women through education, community, and innovation. 
-              We create spaces where women can connect, learn, and grow together, breaking barriers and 
-              building a more equitable future for all.
+            <p
+              className="text-xl text-gray-300 mb-8"
+              style={{ fontFamily: '"Roboto", sans-serif' }}
+            >
+              Nari-Nexus is dedicated to empowering women through education,
+              community, and innovation. We create spaces where women can
+              connect, learn, and grow together, breaking barriers and building
+              a more equitable future for all.
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 mt-12 mission-container">
               <div className="text-center mission-item">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Community</h3>
-                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Building strong networks of support and collaboration</p>
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ fontFamily: '"Playfair Display", serif' }}
+                >
+                  Community
+                </h3>
+                <p
+                  className="text-gray-300"
+                  style={{ fontFamily: '"Roboto", sans-serif' }}
+                >
+                  Building strong networks of support and collaboration
+                </p>
               </div>
-              
+
               <div className="text-center mission-item">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-orange-500 flex items-center justify-center mx-auto mb-4">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Innovation</h3>
-                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Fostering creative solutions to complex challenges</p>
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ fontFamily: '"Playfair Display", serif' }}
+                >
+                  Innovation
+                </h3>
+                <p
+                  className="text-gray-300"
+                  style={{ fontFamily: '"Roboto", sans-serif' }}
+                >
+                  Fostering creative solutions to complex challenges
+                </p>
               </div>
-              
+
               <div className="text-center mission-item">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>Leadership</h3>
-                <p className="text-gray-300" style={{ fontFamily: '"Roboto", sans-serif' }}>Developing the next generation of visionary leaders</p>
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ fontFamily: '"Playfair Display", serif' }}
+                >
+                  Leadership
+                </h3>
+                <p
+                  className="text-gray-300"
+                  style={{ fontFamily: '"Roboto", sans-serif' }}
+                >
+                  Developing the next generation of visionary leaders
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      
 
       {/* Programs Section */}
       <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade">
         <GeometricBackground className="opacity-30" />
         
+
         <div className="container mx-auto px-4 relative z-10">
-          <div style={{ marginTop: '-20px' }}>
-            <SectionTitle 
-              title="Our Programs" 
-              centered={true}
-            />
+          <div style={{ marginTop: "-20px" }}>
+            <SectionTitle title="What We Provide ?" centered={true} />
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Adding div wrappers with program-card class for animation */}
             <div className="program-card">
-              <Card 
-                title="Leadership Development" 
+              <Card
+                title="Leadership Development"
                 description="Comprehensive training programs designed to nurture leadership skills and confidence in women across various sectors."
                 icon={Award}
                 gradient="from-pink-500 to-purple-600"
               />
             </div>
-            
+
             <div className="program-card">
-              <Card 
-                title="Entrepreneurship" 
+              <Card
+                title="Entrepreneurship"
                 description="Resources, mentorship, and funding opportunities for women entrepreneurs to launch and scale their businesses."
                 icon={Sparkles}
                 gradient="from-purple-600 to-orange-500"
               />
             </div>
-            
+
             <div className="program-card">
-              <Card 
-                title="Tech Skills Training" 
+              <Card
+                title="Tech Skills Training"
                 description="Hands-on workshops and courses in coding, digital marketing, and other in-demand tech skills."
                 icon={Lightbulb}
                 gradient="from-orange-500 to-pink-500"
               />
             </div>
-            
-            <div className="program-card">
-              <Card 
-                title="Mentorship Program" 
+
+            {/* <div className="program-card">
+              <Card
+                title="Mentorship Program"
                 description="Connecting experienced professionals with emerging talents for personalized guidance and support."
                 icon={Users}
                 gradient="from-pink-500 to-orange-500"
               />
             </div>
-            
+
             <div className="program-card">
-              <Card 
-                title="Networking Events" 
+              <Card
+                title="Networking Events"
                 description="Regular gatherings that facilitate meaningful connections and collaborative opportunities."
                 icon={Calendar}
                 gradient="from-purple-600 to-pink-500"
               />
-            </div>
-            
-            <div className="program-card">
-              <Card 
-                title="Educational Resources" 
+            </div> */}
+
+            {/* <div className="program-card">
+              <Card
+                title="Educational Resources"
                 description="Access to a wealth of learning materials, research, and tools for continuous personal and professional growth."
                 icon={BookOpen}
                 gradient="from-orange-500 to-purple-600"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-    
-    {/* Events Section */}
-<section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade">
-
-<SectionTitle 
-      title="Upcoming Events" 
-       
-      centered={true}
-    />  
-  <GeometricBackground className="opacity-30" />
-    
-   
-
-  <div className="container mx-auto px-4 relative z-10">
-    
-    
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-        <div className="h-48 bg-gradient-to-r from-pink-500 to-purple-600 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Calendar className="w-16 h-16 text-white event-icon" />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-            <p className="text-sm font-medium">May 15, 2023 • 10:00 AM - 4:00 PM</p>
-          </div>
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">Women in Tech Summit</h3>
-          <p className="text-gray-300 mb-4">Join industry leaders for a day of inspiration, learning, and networking focused on advancing women in technology.</p>
-          <Button to="/events" variant="secondary" size="sm">Learn More</Button>
-        </div>
-      </div>
       
-      <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-        <div className="h-48 bg-gradient-to-r from-purple-600 to-orange-500 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Lightbulb className="w-16 h-16 text-white event-icon" />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-            <p className="text-sm font-medium">June 8, 2023 • 6:00 PM - 8:30 PM</p>
-          </div>
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">Entrepreneurship Workshop</h3>
-          <p className="text-gray-300 mb-4">A hands-on workshop covering business planning, funding strategies, and marketing for women entrepreneurs.</p>
-          <Button to="/events" variant="secondary" size="sm">Learn More</Button>
-        </div>
-      </div>
-      
-      <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-        <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Users className="w-16 h-16 text-white event-icon" />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-            <p className="text-sm font-medium">July 22, 2023 • 1:00 PM - 5:00 PM</p>
-          </div>
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">Mentorship Matchmaking</h3>
-          <p className="text-gray-300 mb-4">Connect with potential mentors and mentees in this structured networking event designed to foster meaningful relationships.</p>
-          <Button to="/events" variant="secondary" size="sm">Learn More</Button>
-        </div>
-      </div>
-    </div>
-    
-    <div className="text-center mt-12 events-cta">
-      <Button to="/" size="lg">
-        View All Events
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </Button>
-    </div>
-  </div>
-</section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 relative scroll-fade">
+      {/* Events Section */}
+      <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade">
+        <SectionTitle title="Upcoming Events" centered={true} />
+        <GeometricBackground className="opacity-30" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+              <div className="h-48 bg-gradient-to-r from-pink-500 to-purple-600 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Calendar className="w-16 h-16 text-white event-icon" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+                  <p className="text-sm font-medium">
+                    May 15, 2023 • 10:00 AM - 4:00 PM
+                  </p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Women in Tech Summit</h3>
+                <p className="text-gray-300 mb-4">
+                  Join industry leaders for a day of inspiration, learning, and
+                  networking focused on advancing women in technology.
+                </p>
+                <Button to="/events" variant="secondary" size="sm">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+              <div className="h-48 bg-gradient-to-r from-purple-600 to-orange-500 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Lightbulb className="w-16 h-16 text-white event-icon" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+                  <p className="text-sm font-medium">
+                    June 8, 2023 • 6:00 PM - 8:30 PM
+                  </p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">
+                  Entrepreneurship Workshop
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  A hands-on workshop covering business planning, funding
+                  strategies, and marketing for women entrepreneurs.
+                </p>
+                <Button to="/events" variant="secondary" size="sm">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+              <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Users className="w-16 h-16 text-white event-icon" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+                  <p className="text-sm font-medium">
+                    July 22, 2023 • 1:00 PM - 5:00 PM
+                  </p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">
+                  Mentorship Matchmaking
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Connect with potential mentors and mentees in this structured
+                  networking event designed to foster meaningful relationships.
+                </p>
+                <Button to="/events" variant="secondary" size="sm">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12 events-cta">
+            <Button to="/" size="lg">
+              View All Events
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Testimonials   */}
+
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Testimonial" 
+          <SectionTitle
+            title="Testimonial"
             subtitle="Voices of Empowerment"
             centered={true}
           />
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 testimonial-container">
             <div className="testimonial-item">
-              <TestimonialCard 
+              <TestimonialCard
                 quote="Nari-Nexus transformed my career trajectory. The leadership program gave me the confidence to pursue my goals and the network to make them happen."
                 author="Priya Sharma"
                 role="Tech Entrepreneur"
                 image="/placeholder.svg?height=200&width=200"
               />
             </div>
-            
+
             <div className="testimonial-item">
-              <TestimonialCard 
+              <TestimonialCard
                 quote="The mentorship I received through Nari-Nexus was invaluable. My mentor helped me navigate challenges and seize opportunities I never thought possible."
                 author="Aisha Johnson"
                 role="Software Engineer"
                 image="/placeholder.svg?height=200&width=200"
               />
             </div>
-            
+
             <div className="testimonial-item">
-              <TestimonialCard 
+              <TestimonialCard
                 quote="From a small idea to a thriving business, Nari-Nexus supported me every step of the way with resources, connections, and encouragement."
                 author="Maya Patel"
                 role="Founder & CEO"
@@ -469,7 +656,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>  
+      </section>
 
       {/* Call to Action */}
       <section className="py-20 relative scroll-fade">
@@ -478,12 +665,15 @@ const Home = () => {
             {/* Geometric accents */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/20 rotate-45"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500/20 rotate-12"></div>
-            
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Join Our Community Today</h2>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
+              Join Our Community Today
+            </h2>
             <p className="text-xl text-gray-300 mb-8 relative z-10">
-              Connect with like-minded women, access exclusive resources, and be part of a movement that's changing the world.
+              Connect with like-minded women, access exclusive resources, and be
+              part of a movement that's changing the world.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <Button to="/" size="xl">
                 Get Started
@@ -495,8 +685,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home 
+export default Home;
