@@ -4,103 +4,103 @@ import Button from '../components/Button'
 import GeometricBackground from '../components/GeometricBackground'
 
 const Team = () => {
-  const leadershipTeam = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      role: 'Co-Founder & CEO',
-      bio: 'With over 15 years of experience in technology and leadership, Sarah is passionate about creating opportunities for women in tech and business.',
-      image: '/placeholder.svg?height=300&width=300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'sarah@narinexus.org'
-      }
-    },
-    {
-      id: 2,
-      name: 'Maya Patel',
-      role: 'Co-Founder & COO',
-      bio: 'Maya brings her expertise in operations and community building to ensure Nari-Nexus programs deliver maximum impact for participants.',
-      image: '/placeholder.svg?height=300&width=300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'maya@narinexus.org'
-      }
-    },
-    {
-      id: 3,
-      name: 'Aisha Rodriguez',
-      role: 'Chief Program Officer',
-      bio: 'Aisha oversees all educational and development programs, bringing her background in curriculum design and adult learning.',
-      image: '/placeholder.svg?height=300&width=300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'aisha@narinexus.org'
-      }
-    },
-    {
-      id: 4,
-      name: 'Priya Sharma',
-      role: 'Chief Technology Officer',
-      bio: 'Priya leads our technology initiatives and digital transformation efforts, with a focus on making tech skills accessible to all women.',
-      image: '/placeholder.svg?height=300&width=300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'priya@narinexus.org'
-      }
-    }
-  ]
+  // const leadershipTeam = [
+  //   {
+  //     id: 1,
+  //     name: 'Sarah Johnson',
+  //     role: 'Co-Founder & CEO',
+  //     bio: 'With over 15 years of experience in technology and leadership, Sarah is passionate about creating opportunities for women in tech and business.',
+  //     image: '/placeholder.svg?height=300&width=300',
+  //     social: {
+  //       linkedin: '#',
+  //       twitter: '#',
+  //       email: 'sarah@narinexus.org'
+  //     }
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Maya Patel',
+  //     role: 'Co-Founder & COO',
+  //     bio: 'Maya brings her expertise in operations and community building to ensure Nari-Nexus programs deliver maximum impact for participants.',
+  //     image: '/placeholder.svg?height=300&width=300',
+  //     social: {
+  //       linkedin: '#',
+  //       twitter: '#',
+  //       email: 'maya@narinexus.org'
+  //     }
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Aisha Rodriguez',
+  //     role: 'Chief Program Officer',
+  //     bio: 'Aisha oversees all educational and development programs, bringing her background in curriculum design and adult learning.',
+  //     image: '/placeholder.svg?height=300&width=300',
+  //     social: {
+  //       linkedin: '#',
+  //       twitter: '#',
+  //       email: 'aisha@narinexus.org'
+  //     }
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Priya Sharma',
+  //     role: 'Chief Technology Officer',
+  //     bio: 'Priya leads our technology initiatives and digital transformation efforts, with a focus on making tech skills accessible to all women.',
+  //     image: '/placeholder.svg?height=300&width=300',
+  //     social: {
+  //       linkedin: '#',
+  //       twitter: '#',
+  //       email: 'priya@narinexus.org'
+  //     }
+  //   }
+  // ]
   
   const teamMembers = [
     {
       id: 1,
-      name: 'Jennifer Lee',
-      role: 'Program Director',
-      image: '/placeholder.svg?height=300&width=300'
+      name: 'Kritika',
+      role: 'CEO',
+      image: '/img/Kritika.jpg'
     },
     {
       id: 2,
-      name: 'Sophia Chen',
+      name: 'Sujal',
       role: 'Community Manager',
-      image: '/placeholder.svg?height=300&width=300'
+      image: '/img/Sujal.jpg'
     },
     {
       id: 3,
-      name: 'Olivia Wilson',
+      name: 'Sunidhi',
       role: 'Events Coordinator',
       image: '/placeholder.svg?height=300&width=300'
     },
     {
       id: 4,
-      name: 'Emma Davis',
+      name: 'Pradhumnya',
       role: 'Marketing Specialist',
-      image: '/placeholder.svg?height=300&width=300'
+      image: '/img/Pradhumnya.jpg'
     },
     {
       id: 5,
-      name: 'Zoe Martinez',
+      name: 'Rishu',
       role: 'Curriculum Developer',
-      image: '/placeholder.svg?height=300&width=300'
+      image: '/img/Rishu.jpg'
     },
     {
       id: 6,
-      name: 'Leila Patel',
+      name: 'Pranav',
       role: 'Partnerships Manager',
       image: '/placeholder.svg?height=300&width=300'
     },
     {
       id: 7,
-      name: 'Amara Johnson',
+      name: 'Ayush',
       role: 'Finance Director',
       image: '/placeholder.svg?height=300&width=300'
     },
     {
       id: 8,
-      name: 'Tara Williams',
+      name: 'Akshay',
       role: 'Research Analyst',
       image: '/placeholder.svg?height=300&width=300'
     }
@@ -122,10 +122,32 @@ const Team = () => {
             </p>
           </div>
         </div>
+
+        <div className="container mx-auto px-4">
+           
+          
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
+            {teamMembers.map((member) => (
+              <div key={member.id} className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={member.image || "/placeholder.svg"} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold mb-1">{member.name}</h3>
+                  <p className="text-purple-400 text-sm">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Leadership Team" 
@@ -165,7 +187,7 @@ const Team = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values */}
       {/* <section className="py-20 bg-gradient-to-b from-black to-purple-900/20 relative">
@@ -233,31 +255,7 @@ const Team = () => {
 
       {/* Team Members */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Our Team" 
-            subtitle="The People Behind Nari-Nexus"
-            centered={true}
-          />
-          
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={member.image || "/placeholder.svg"} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                  <p className="text-purple-400 text-sm">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </section>
 
       {/* Join Our Team */}
@@ -337,7 +335,7 @@ const Team = () => {
       </section> */}
 
       {/* Advisors */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Our Advisors" 
@@ -379,13 +377,13 @@ const Team = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-pink-500/10 via-purple-600/10 to-orange-500/10 backdrop-blur-sm border border-white/10 rounded-xl p-12 text-center relative overflow-hidden">
-            {/* Geometric accents */}
+        
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/20 rotate-45"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500/20 rotate-12"></div>
             
@@ -404,7 +402,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
