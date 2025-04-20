@@ -452,7 +452,7 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10 "  style={{ fontFamily: '"Playfair Display", serif' }}>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
-              About Nari-Nexus
+              About NariNexus
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               We’re not waiting for doors to open we’re building our own.
