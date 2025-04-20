@@ -36,7 +36,8 @@ const HeroHeading = () => {
   }, [charIndex, isDeleting, currentTextIndex, texts]);
 
   return (
-    <h1 className="  font-bold leading-tight mb-6"
+    <h1 className="font-bold leading-tight mb-6 transform translate-x-4 md:translate-x-18 transition-all duration-500"
+
     style={{ fontFamily: '"Playfair Display", serif' }}>
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
         {displayedText}

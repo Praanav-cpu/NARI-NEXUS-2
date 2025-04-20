@@ -45,7 +45,7 @@ const Contact = () => {
       <section className="relative py-20 overflow-hidden">
         <GeometricBackground className="opacity-40" />
               
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10"  style={{ fontFamily: '"Playfair Display", serif' }}  >
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
               Contact Us
@@ -410,7 +410,7 @@ const Contact = () => {
       </section> */}
 
       {/* FAQ */}
-      <section className="py-20 bg-gradient-to-b from-black to-purple-900/20 relative">
+      {/* <section className="py-20 bg-gradient-to-b from-black to-purple-900/20 relative">
         <GeometricBackground className="opacity-30" />
 
         <div className="container mx-auto px-4 relative z-10">
@@ -475,13 +475,13 @@ const Contact = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-pink-500/10 via-purple-600/10 to-orange-500/10 backdrop-blur-sm border border-white/10 rounded-xl p-12 text-center relative overflow-hidden">
-            {/* Geometric accents */}
+            
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/20 rotate-45"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500/20 rotate-12"></div>
 
@@ -503,7 +503,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import Logo from './Logo'
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black border-t border-gray-800 overflow-hidden">
+    <footer className="relative ">
       {/* Geometric shapes decoration */}
       {/* <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden z-0 opacity-30">
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-600 rotate-45"></div>
@@ -82,13 +82,13 @@ const Footer = () => {
           </div> */}
         {/* </div> */}
         
-        {/* <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm"> */}
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm" style={{ fontFamily: '"Playfair Display", serif' }}>
           <p>© {new Date().getFullYear()} Nari-Nexus. All rights reserved.</p>
           <div className="mt-2 flex justify-center space-x-6">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
-        {/* </div> */}
+        </div>
        
     </footer>
   )

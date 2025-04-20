@@ -6,15 +6,33 @@ import Logo from './Logo'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
   const location = useLocation()
-
+  
   useEffect(() => {
+    let scrollTimeout;
+    
     const handleScroll = () => {
+      // Set scrolled state based on scroll position
       setScrolled(window.scrollY > 10)
+      
+      // Show navbar when scrolling starts
+      setIsScrolling(true)
+      
+      // Clear previous timeout if it exists
+      clearTimeout(scrollTimeout)
+      
+      // Set a timeout to hide navbar when scrolling stops
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false)
+      }, 1500) // Hide navbar after 1.5 seconds of no scrolling
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimeout)
+    }
   }, [])
 
   const toggleMenu = () => setIsOpen(!isOpen)
@@ -64,9 +82,18 @@ const Navbar = () => {
     )
   }
 
+  // Show navbar only when scrolling or when menu is open
+  const showNavbar = isScrolling || isOpen || window.scrollY === 0
+  
   return (
-    <nav className={`fixed top-4 left-0 right-0 z-50 mx-auto max-w-screen-xl transition-all duration-300 ${scrolled ? 'bg-transperent backdrop-blur-sm py-4' : 'bg-black/70 backdrop-blur-sm py-6'} rounded-xl shadow-lg`}>
-      <div className="container mx-auto px-4 md:px-6">
+    <nav 
+      className={`fixed top-4 left-0 right-0 z-50 mx-auto max-w-screen-xl transition-all duration-300 
+        ${scrolled ? 'bg-transperent backdrop-blur-sm py-4' : 'bg-black/70 backdrop-blur-sm py-6'} 
+        rounded-xl shadow-lg
+        ${showNavbar ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}
+      `}
+    >
+      <div className="container mx-auto px-4 md:px-6" style={{ fontFamily: '"Playfair Display", serif' }}>
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeMenu}>
