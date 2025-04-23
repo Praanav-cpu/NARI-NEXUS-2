@@ -392,11 +392,9 @@ const Home = () => {
                 className="flex flex-wrap gap-4 transform translate-x-4 md:translate-x-18 transition-all duration-500"
                 style={{ fontFamily: '"Roboto", sans-serif' }}
               >
-                <Button to="/programs" size="lg">
-                  Explore Programs
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button to="/about" variant="secondary" size="lg">
+                <Button href="#programs" size="lg">Explore Programs</Button>
+
+                <Button to="#about" variant="secondary" size="lg">
                   Learn More
                 </Button>
               </div>
@@ -523,7 +521,7 @@ const Home = () => {
          
       </section> */}
 
-      <section className="py-20 relative scroll-fade">
+      <section id= "programs" className="py-20 relative scroll-fade">
         <GeometricBackground2 className="opacity-50" />
         <div className="container mx-auto px-4">
           <SectionTitle title="Our Mission" centered={true} />
