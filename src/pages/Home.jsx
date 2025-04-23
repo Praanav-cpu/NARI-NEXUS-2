@@ -340,12 +340,12 @@ const Home = () => {
       id: 8,
       name: "Akshay",
       // role: 'Research Analyst',
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/img/Akshay.jpg",
       socials: {
-        instagram: "https://instagram.com/kritika",
-        linkedin: "https://linkedin.com/in/kritika",
-        github: "https://github.com/kritika",
-        x: "https://twitter.com/kritika",
+        instagram: "https://www.instagram.com/its_gangasagar05",
+        linkedin: "https://www.linkedin.com/in/akshay-gangasagar-67b25b305/",
+        github: "https://github.com/Akkhi05",
+        // x: "https://twitter.com/kritika",
       },
     },
   ];
