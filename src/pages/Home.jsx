@@ -515,6 +515,79 @@ const Home = () => {
          
       </section> */}
 
+      
+
+      {/* Programs Section */}
+      <section
+        id="programs"
+        className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade"
+      >
+        <GeometricBackground className="opacity-30" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div style={{ marginTop: "-20px" }}>
+            <SectionTitle title="What We Provide ?" centered={true} />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Adding div wrappers with program-card class for animation */}
+            <div className="program-card">
+              <Card
+                title="Leadership Development"
+                description="Training programs to build leadership and confidence in women."
+                icon={Award}
+                gradient="from-pink-500 to-purple-600"
+              />
+            </div>
+
+            <div className="program-card">
+              <Card
+                title="Entrepreneurship"
+                description="Resources, mentorship, and funding opportunities for women entrepreneurs to launch and scale their businesses."
+                icon={Sparkles}
+                gradient="from-purple-600 to-orange-500"
+              />
+            </div>
+
+            <div className="program-card">
+              <Card
+                title="Tech Skills Training"
+                description="Hands-on workshops and courses in coding, digital marketing, and other in-demand tech skills."
+                icon={Lightbulb}
+                gradient="from-orange-500 to-pink-500"
+              />
+            </div>
+
+            {/* <div className="program-card">
+              <Card
+                title="Mentorship Program"
+                description="Connecting experienced professionals with emerging talents for personalized guidance and support."
+                icon={Users}
+                gradient="from-pink-500 to-orange-500"
+              />
+            </div>
+
+            <div className="program-card">
+              <Card
+                title="Networking Events"
+                description="Regular gatherings that facilitate meaningful connections and collaborative opportunities."
+                icon={Calendar}
+                gradient="from-purple-600 to-pink-500"
+              />
+            </div>  
+
+            {/* <div className="program-card">
+              <Card
+                title="Educational Resources"
+                description="Access to a wealth of learning materials, research, and tools for continuous personal and professional growth."
+                icon={BookOpen}
+                gradient="from-orange-500 to-purple-600"
+              />
+            </div> */}
+          </div>
+        </div>
+      </section>
+
       <section id= "programs" className="py-20 relative scroll-fade">
         <GeometricBackground2 className="opacity-50" />
         <div className="container mx-auto px-4">
@@ -686,77 +759,6 @@ const Home = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Section */}
-      <section
-        id="programs"
-        className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade"
-      >
-        <GeometricBackground className="opacity-30" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div style={{ marginTop: "-20px" }}>
-            <SectionTitle title="What We Provide ?" centered={true} />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Adding div wrappers with program-card class for animation */}
-            <div className="program-card">
-              <Card
-                title="Leadership Development"
-                description="Training programs to build leadership and confidence in women."
-                icon={Award}
-                gradient="from-pink-500 to-purple-600"
-              />
-            </div>
-
-            <div className="program-card">
-              <Card
-                title="Entrepreneurship"
-                description="Resources, mentorship, and funding opportunities for women entrepreneurs to launch and scale their businesses."
-                icon={Sparkles}
-                gradient="from-purple-600 to-orange-500"
-              />
-            </div>
-
-            <div className="program-card">
-              <Card
-                title="Tech Skills Training"
-                description="Hands-on workshops and courses in coding, digital marketing, and other in-demand tech skills."
-                icon={Lightbulb}
-                gradient="from-orange-500 to-pink-500"
-              />
-            </div>
-
-            {/* <div className="program-card">
-              <Card
-                title="Mentorship Program"
-                description="Connecting experienced professionals with emerging talents for personalized guidance and support."
-                icon={Users}
-                gradient="from-pink-500 to-orange-500"
-              />
-            </div>
-
-            <div className="program-card">
-              <Card
-                title="Networking Events"
-                description="Regular gatherings that facilitate meaningful connections and collaborative opportunities."
-                icon={Calendar}
-                gradient="from-purple-600 to-pink-500"
-              />
-            </div>  
-
-            {/* <div className="program-card">
-              <Card
-                title="Educational Resources"
-                description="Access to a wealth of learning materials, research, and tools for continuous personal and professional growth."
-                icon={BookOpen}
-                gradient="from-orange-500 to-purple-600"
-              />
-            </div> */}
           </div>
         </div>
       </section>
