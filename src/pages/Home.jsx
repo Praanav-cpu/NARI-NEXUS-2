@@ -255,7 +255,7 @@ const Home = () => {
       image: "/img/Sujal.jpg",
       socials: {
         // instagram: 'https://instagram.com/kritika',
-        // linkedin: 'https://linkedin.com/in/kritika',
+        linkedin: 'https://www.linkedin.com/in/sujal-khade-2823a32a6/',
         github: "https://github.com/codetechie43",
         x: "https://x.com/CodeTechie43?t=s9J0-cmid0UXHVk0lMSx7w&s=09",
       },
@@ -264,13 +264,13 @@ const Home = () => {
       id: 3,
       name: "Sunidhi",
       // role: 'Events Coordinator',
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/img/Sunidhi.jpg",
       socials: {
         instagram:
           "https://www.instagram.com/sunidhi_vj?igsh=MWs1NHY1N3F6bXRibg==",
         linkedin:
           "https://www.linkedin.com/in/sunidhi-haware-797a97323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        // github: 'https://github.com/kritika',
+        github: 'https://github.com/Sunidhi369',
         x: "https://x.com/Sunidhi_vj?t=2MmYce2G-HyQkYoK8JsySA&s=09",
       },
     },
