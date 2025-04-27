@@ -255,7 +255,7 @@ const Home = () => {
       image: "/img/Sujal.jpg",
       socials: {
         // instagram: 'https://instagram.com/kritika',
-        linkedin: 'https://www.linkedin.com/in/sujal-khade-2823a32a6/',
+        linkedin: "https://www.linkedin.com/in/sujal-khade-2823a32a6/",
         github: "https://github.com/codetechie43",
         x: "https://x.com/CodeTechie43?t=s9J0-cmid0UXHVk0lMSx7w&s=09",
       },
@@ -270,7 +270,7 @@ const Home = () => {
           "https://www.instagram.com/sunidhi_vj?igsh=MWs1NHY1N3F6bXRibg==",
         linkedin:
           "https://www.linkedin.com/in/sunidhi-haware-797a97323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        github: 'https://github.com/Sunidhi369',
+        github: "https://github.com/Sunidhi369",
         x: "https://x.com/Sunidhi_vj?t=2MmYce2G-HyQkYoK8JsySA&s=09",
       },
     },
@@ -386,7 +386,9 @@ const Home = () => {
                 className="flex flex-wrap gap-4 transform translate-x-4 md:translate-x-18 transition-all duration-500"
                 style={{ fontFamily: '"Roboto", sans-serif' }}
               >
-                <Button href="#programs" size="lg">Explore Programs</Button>
+                <Button href="#programs" size="lg">
+                  Explore Programs
+                </Button>
 
                 <Button to="#about" variant="secondary" size="lg">
                   Learn More
@@ -401,36 +403,36 @@ const Home = () => {
                   : "opacity-0 translate-y-10"
               }`}
             >
-             <div className="relative w-full aspect-square max-w-md mx-auto">
-  {/* Animated Gradient Background */}
-  <div
-    className="absolute inset-0 rounded-full blur-xl opacity-80 z-0"
-    style={{
-      background: "conic-gradient(from 0deg, #ec4899, #a855f7, #f97316, #ec4899)",
-      animation: "spinGradient 10s linear infinite",
-    }}
-  />
+              <div className="relative w-full aspect-square max-w-md mx-auto">
+                {/* Animated Gradient Background */}
+                <div
+                  className="absolute inset-0 rounded-full blur-xl opacity-80 z-0"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, #ec4899, #a855f7, #f97316, #ec4899)",
+                    animation: "spinGradient 10s linear infinite",
+                  }}
+                />
 
-  {/* White Inner Circle with Logo */}
-  <div className="absolute inset-4 rounded-full bg-white flex items-center justify-center z-10 shadow-2xl">
-    <img
-      src="/img/logo.png"
-      alt="Centered Logo"
-      className="object-contain rounded-full w-3/4 h-3/4"
-    />
-  </div>
+                {/* White Inner Circle with Logo */}
+                <div className="absolute inset-4 rounded-full bg-white flex items-center justify-center z-10 shadow-2xl">
+                  <img
+                    src="/img/logo.png"
+                    alt="Centered Logo"
+                    className="object-contain rounded-full w-3/4 h-3/4"
+                  />
+                </div>
 
-  {/* Inline Style for Animation */}
-  <style>
-    {`
+                {/* Inline Style for Animation */}
+                <style>
+                  {`
       @keyframes spinGradient {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
     `}
-  </style>
-</div>
-
+                </style>
+              </div>
             </div>
           </div>
         </div>
@@ -441,7 +443,10 @@ const Home = () => {
       <section id="about" className="relative py-20 overflow-hidden">
         <GeometricBackground3 className="opacity-40" />
 
-        <div className="container mx-auto px-4 relative z-10 "  style={{ fontFamily: '"Playfair Display", serif' }}>
+        <div
+          className="container mx-auto px-4 relative z-10 "
+          style={{ fontFamily: '"Playfair Display", serif' }}
+        >
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500">
               About NariNexus
@@ -515,8 +520,6 @@ const Home = () => {
          
       </section> */}
 
-      
-
       {/* Programs Section */}
       <section
         id="programs"
@@ -588,7 +591,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id= "programs" className="py-20 relative scroll-fade">
+      <section id="programs" className="py-20 relative scroll-fade">
         <GeometricBackground2 className="opacity-50" />
         <div className="container mx-auto px-4">
           <SectionTitle title="Our Mission" centered={true} />
@@ -764,7 +767,7 @@ const Home = () => {
       </section>
 
       {/* Events Section */}
-      {/* <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade">
+      <section className="py-20 relative bg-gradient-to-b from-black to-purple-900/20 scroll-fade">
         <SectionTitle title="Upcoming Events" centered={true} />
         <GeometricBackground className="opacity-30" />
 
@@ -850,11 +853,11 @@ const Home = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-        </div> */}
+        </div>
 
         {/* Testimonials   */}
 
-        {/* <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4">
           <SectionTitle
             title="Testimonial"
             subtitle="Voices of Empowerment"
@@ -890,14 +893,17 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section id="team" className="relative py-20 overflow-hidden">
         <GeometricBackground className="opacity-40" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500"  style={{ fontFamily: '"Playfair Display", serif' }}>
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
               Our Team
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -908,25 +914,35 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12"  style={{ fontFamily: '"Playfair Display", serif' }}>
+          <div
+            className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12"
+            style={{ fontFamily: '"Playfair Display", serif' }}
+          >
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300"
+                className="relative bg-transperent bg-opacity-10 backdrop-blur-lg border border-white/20 rounded-2xl overflow-hidden group transition-all duration-300 shadow-lg"
               >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                  <p className="text-purple-400 text-sm">{member.role}</p>
+                <div className="flex flex-col items-center p-8">
+                  {/* Circle frame */}
+                  <div className="relative w-48 h-48 rounded-full bg-[#a91fb07c] flex items-center justify-center mb-8 shadow-lg">
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-44 h-44 rounded-full object-cover"
+                    />
+                  </div>
 
-                  {/* ✅ Social Icons must be inside this scope */}
-                  <div className="flex justify-center gap-4 mt-3 text-white text-xl">
+                  {/* Member Name & Role */}
+                  <h3 className="text-2xl font-bold text-center text-white">
+                    {member.name}
+                  </h3>
+                  <p className="text-md text-center text-gray-200 mt-2">
+                    {member.role}
+                  </p>
+
+                  {/* Socials */}
+                  <div className="flex justify-center gap-5 mt-5 text-white text-2xl">
                     {member.socials.instagram && (
                       <a
                         href={member.socials.instagram}
@@ -979,7 +995,10 @@ const Home = () => {
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/20 rotate-45"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500/20 rotate-12"></div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-6 relative z-10"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
               Join Our Community Today
             </h2>
             <p className="text-xl text-gray-300 mb-8 relative z-10">
@@ -987,7 +1006,10 @@ const Home = () => {
               part of a movement that's changing the world.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
               <Button to="/Contact" size="xl">
                 Get Started
               </Button>
