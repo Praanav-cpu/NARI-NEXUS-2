@@ -390,9 +390,9 @@ const Home = () => {
                   Explore Programs
                 </Button>
 
-                <Button to="#about" variant="secondary" size="lg">
+                {/* <Button to="#about" variant="secondary" size="lg">
                   Learn More
-                </Button>
+                </Button> */}
               </div>
             </div>
 
@@ -772,92 +772,134 @@ const Home = () => {
         <GeometricBackground className="opacity-30" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-r from-pink-500 to-purple-600 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Calendar className="w-16 h-16 text-white event-icon" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-                  <p className="text-sm font-medium">
-                    May 15, 2023 • 10:00 AM - 4:00 PM
-                  </p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Women in Tech Summit</h3>
-                <p className="text-gray-300 mb-4">
-                  Join industry leaders for a day of inspiration, learning, and
-                  networking focused on advancing women in technology.
-                </p>
-                <Button to="/events" variant="secondary" size="sm">
-                  Learn More
-                </Button>
-              </div>
-            </div>
+  {/* First Row */}
+  <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8 mb-8">
+    <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+      <div className="h-48 bg-gradient-to-r from-pink-500 to-purple-600 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <Lightbulb className="w-16 h-16 text-white event-icon" /> */}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">10th May - Hack4Maha KickOff Session</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Get ready to ignite your innovation!</h3>
+        <p className="text-gray-300 mb-4">
+          Get ready for the Hack4Maha Kickoff Session on 10th May! 🚀
+          Know the themes, guidelines, and start your journey towards innovation.
+          Let’s gear up for an exciting hackathon ahead!
+        </p>
+      </div>
+    </div>
 
-            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-r from-purple-600 to-orange-500 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Lightbulb className="w-16 h-16 text-white event-icon" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-                  <p className="text-sm font-medium">
-                    June 8, 2023 • 6:00 PM - 8:30 PM
-                  </p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">
-                  Entrepreneurship Workshop
-                </h3>
-                <p className="text-gray-300 mb-4">
-                  A hands-on workshop covering business planning, funding
-                  strategies, and marketing for women entrepreneurs.
-                </p>
-                <Button to="/events" variant="secondary" size="sm">
-                  Learn More
-                </Button>
-              </div>
-            </div>
+    <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+      <div className="h-48 bg-gradient-to-r from-purple-600 to-orange-500 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <Users className="w-16 h-16 text-white event-icon" /> */}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">16th May - Pixel Art Drawing Contest</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Dive into the world of creativity and color!</h3>
+        <p className="text-gray-300 mb-4">
+          Dive into the world of creativity with the Pixel Art Drawing Contest on 16th May! 🎨
+          Bring your ideas to life, pixel by pixel, and show us your artistic flair.
+        </p>
+      </div>
+    </div>
 
-            <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white event-icon" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-                  <p className="text-sm font-medium">
-                    July 22, 2023 • 1:00 PM - 5:00 PM
-                  </p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">
-                  Mentorship Matchmaking
-                </h3>
-                <p className="text-gray-300 mb-4">
-                  Connect with potential mentors and mentees in this structured
-                  networking event designed to foster meaningful relationships.
-                </p>
-                <Button to="/events" variant="secondary" size="sm">
-                  Learn More
-                </Button>
-              </div>
-            </div>
-          </div>
+    <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+      <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <Users className="w-16 h-16 text-white event-icon" />
+         */}
+         {/* <Users className="w-16 h-16 text-white event-icon" /> */}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">17th May - Idea to MVP Session</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Join us on 17th May for the Idea to MVP Session! 🚀</h3>
+        <p className="text-gray-300 mb-4">
+          Learn how to transform raw ideas into working prototypes, and take your first step towards building real-world solutions.
+        </p>
+      </div>
+    </div>
+  </div>
 
-          <div className="text-center mt-12 events-cta">
-            <Button to="/" size="lg">
+  {/* Second Row */}
+  <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+    <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+    <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* <Calendar className="w-16 h-16 text-white event-icon" /> */}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">23rd May - Scribble Gaming Night
+</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Scribble Gaming Night</h3>
+        <p className="text-gray-300 mb-4">
+        Join us on 23rd May for a thrilling evening of fun and friendly competition at Scribble Gaming Night! Battle it out in exciting games, showcase your skills, and connect with fellow gaming enthusiasts. Don’t miss out on the fun! 
+        </p>
+      </div>
+    </div>
+
+    <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+    <div className="h-48 bg-gradient-to-r from-orange-500 to-pink-500 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* <Lightbulb className="w-16 h-16 text-white event-icon" /> */}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">Hack4Brahma KickOff Session</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Get ready to ignite your innovation!</h3>
+        <p className="text-gray-300 mb-4">
+        Get ready to kickstart your journey at Hack4Brahma on 24th May! Join us for an inspiring session to begin an exciting hackathon adventure. 
+        </p>
+      </div>
+    </div>
+
+    {/* <div className="event-card bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
+      <div className="h-48 bg-gradient-to-r from-yellow-500 to-red-500 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Users className="w-16 h-16 text-white event-icon" />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+          <p className="text-sm font-medium">22nd May - Closing Ceremony</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2">Celebrate the journey!</h3>
+        <p className="text-gray-300 mb-4">
+          Join us for the Closing Ceremony on 22nd May. Let's celebrate the amazing journey and achievements together! 🎉
+        </p>
+      </div>
+    </div> */}
+  </div>
+ 
+
+          
+
+          {/* <div className="text-center mt-12 events-cta">
+            <Button to="/programs" size="lg">
               View All Events
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
+          </div> */}
         </div>
 
         {/* Testimonials   */}
 
-        <div className="container mx-auto px-4">
+        {/* <div className="container mx-auto px-4">
           <SectionTitle
             title="Testimonial"
             subtitle="Voices of Empowerment"
@@ -892,8 +934,8 @@ const Home = () => {
               />
             </div>
           </div>
-        </div>
-      </section>
+        </div>*/}
+      </section>  
 
       <section id="team" className="relative py-20 overflow-hidden">
         <GeometricBackground className="opacity-40" />
