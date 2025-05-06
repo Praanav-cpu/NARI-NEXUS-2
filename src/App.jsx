@@ -8,6 +8,7 @@ import Resources from './pages/Resources';
 import Stories from './pages/Stories';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
+import Upcoming from './pages/Upcoming';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </section>
         <section id="programs" >
           <Programs />
+        </section>
+        <section id="upcoming" >
+          <Upcoming />
         </section>
            {/* <section id="events" className="py-0">
           <Events />
