@@ -9,6 +9,7 @@ import Stories from './pages/Stories';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
 import Upcoming from './pages/Upcoming';
+// import Si from './pages/Si'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <section id="about" >
           <About />
         </section>
+        {/* <section id="si" >
+          <Si />
+        </section> */}
         <section id="programs" >
           <Programs />
         </section>
