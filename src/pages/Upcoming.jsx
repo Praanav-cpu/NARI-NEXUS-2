@@ -57,7 +57,7 @@ const Upcoming = () => {
       colors: "from-orange-500 to-pink-500",
       // capacity: "78/100 Registered",
       tags: ["Gaming", "Social", "Fun"],
-      registerLink: ""
+      registerLink: "https://lu.ma/8cai0u6z"
     },
     {
       id: 4,
