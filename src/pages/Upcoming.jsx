@@ -61,11 +61,11 @@ const Upcoming = () => {
     },
     {
       id: 4,
-      title: "Summer Hackathon Kick-Off",
+      title: "Kick-Off (Hack4Brahma)",
       date: "25th May 2025",
       // time: "9:00 AM - 11:00 AM",
       location: "Main Auditorium",
-      desc: "Launch of our annual summer hackathon with exciting challenges and prizes.",
+      desc: "Launch of our annual hackathon with exciting challenges and prizes.",
       icon: <Sparkles className="w-8 h-8" />,
       colors: "from-blue-500 to-cyan-400",
       // capacity: "156/200 Registered",
@@ -168,17 +168,17 @@ const Upcoming = () => {
                     <Calendar className="w-4 h-4 mr-2" />
                     <span>{event.date}</span>
                   </div>
-                  <div className="flex items-center text-sm text-gray-400">
+                  {/* <div className="flex items-center text-sm text-gray-400">
                     <Clock className="w-4 h-4 mr-2" />
                     <span>{event.time}</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center text-sm text-gray-400">
                     <MapPin className="w-4 h-4 mr-2" />
                     <span>{event.location}</span>
                   </div>
                 </div>
                 
-                {/* Tags */}
+              
                 <div className="flex flex-wrap gap-2 mb-6">
                   {event.tags.map((tag, tagIdx) => (
                     <span 
@@ -190,7 +190,7 @@ const Upcoming = () => {
                   ))}
                 </div>
                 
-                {/* Register button */}
+              
                 <button 
                   onClick={() => handleRegister(event.id, event.registerLink)}
                   className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium transition-all duration-300 bg-gradient-to-r ${event.colors} opacity-90 hover:opacity-100 transform hover:translate-y-[-2px] hover:shadow-lg`}
