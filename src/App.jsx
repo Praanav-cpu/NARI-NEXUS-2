@@ -49,6 +49,9 @@ function App() {
           <Team />
         </section>
         <section   className="py-0">
+          <Venue />
+        </section>
+        <section   className="py-0">
           <Contact />
         </section>
       </main>
