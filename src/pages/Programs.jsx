@@ -237,17 +237,17 @@ const Programs = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="animate-hero">
-              <SectionTitle title="Our Previous Programs" centered={true} />
+              <SectionTitle title="Upcoming Events" centered={true} />
             </div>
-            <p className="animate-hero text-lg text-gray-300 mb-8 bg-black/30 p-3 backdrop-blur-sm rounded-lg">
-              A look back at our successful initiatives designed to empower women in their personal and professional journeys.
-            </p>
+            {/* <p className="animate-hero text-lg text-gray-300 mb-8 bg-black/30 p-3 backdrop-blur-sm rounded-lg">
+                  Let's Talk Open Source And Communities 
+            </p> */}
           </div>
         </div>
 
         {/* Previous Event Cards Section */}
         <div ref={previousEventRef} className="container mx-auto px-4 mt-10">
-          <div className="animate-title mb-10 text-center">
+          {/* <div className="animate-title mb-10 text-center">
             <div className="inline-block relative">
               <SectionTitle 
                 title="Past Events" 
@@ -256,50 +256,49 @@ const Programs = () => {
                 centered={true}
               />
             </div>
-          </div>
+          </div> */}
           
           {/* Event Card */}
           <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-xl hover:shadow-purple-500/20 transition-all duration-300 mb-12">
             <div className="relative h-48 bg-gradient-to-r from-purple-600 to-pink-500 p-6 flex items-end">
-              <div className="absolute top-4 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-                Completed
-              </div>
-              <h3 className="text-2xl font-bold text-white">Hack4Maha KickOff Session</h3>
+               
+              <h3 className="text-2xl font-bold text-white">Let's Talk Open Source And Communities</h3>
             </div>
             
             <div className="p-6">
               <div className="flex flex-wrap items-center mb-4 text-sm text-gray-400">
                 <span className="flex items-center mr-6">
                   <Calendar className="mr-2 h-4 w-4" />
-                  May 10, 2025
+                  June 28, 2025
                 </span>
-                <span className="flex items-center">
+                {/* <span className="flex items-center">
                   <Users className="mr-2 h-4 w-4" />
                   120+ Attendees
-                </span>
+                </span> */}
               </div>
               
               <p className="text-gray-300 mb-6">
-                Our program successfully empowered women to become confident, inclusive, and visionary leaders through mentorship, hands-on training, and strategic development.
+                 Join us for an inspiring double session with Patel Sir and Ali Musthafa Sir exploring open source contribution, community, and the power of social growth.
               </p>
               
               {/* Speakers/Leaders Section */}
               <div ref={leadersRef} className="mb-6">
-                <h4 className="text-white text-lg font-medium mb-4">Featured Speakers</h4>
+                <h4 className="text-white text-lg font-medium mb-4">Our Speakers</h4>
                 <div className="flex flex-wrap gap-4">
                   {/* Speaker Card 1 */}
                   <div className="leader-profile flex items-center p-3 bg-black/30 rounded-lg w-full sm:w-auto">
                     <img 
-                      src="/img/Swati.jpeg" 
-                      alt="Leader" 
-                      className="profile-pic w-12 h-12 rounded-full object-cover border-2 border-purple-600 shadow-lg mr-3"
-                    />
+  src="/img/Ali.jpg" 
+  alt="Leader" 
+  className="profile-pic w-26 h-36 rounded-full object-cover border-2 border-purple-600 shadow-lg mr-3"
+/>
+
                     <div>
-                      <h5 className="leader-details text-white font-medium">Swati Awasthi</h5>
-                      <p className="leader-details text-gray-400 text-xs">Founder, Women in Product India</p>
+                      <h5 className="leader-details text-white font-medium">Ali Musthafa</h5>
+                      <p className="leader-details text-gray-400 text-xs">Senior Dev Advocate At Pieces</p>
                     </div>
                     <div className="flex ml-auto">
-                      <a href="https://www.linkedin.com/in/swati-awasthi" target="_blank" rel="noopener noreferrer" className="p-1 text-purple-400 hover:text-purple-300">
+                      <a href="https://www.linkedin.com/in/ialimustufa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="p-1 text-purple-400 hover:text-purple-300">
                         <FaLinkedin className="social-icon text-lg" />
                       </a>
                     </div>
@@ -308,16 +307,16 @@ const Programs = () => {
                   {/* Speaker Card 2 */}
                   <div className="leader-profile flex items-center p-3 bg-black/30 rounded-lg w-full sm:w-auto">
                     <img 
-                      src="/img/Amrit.png" 
+                      src="/img/Patel.jpg" 
                       alt="Leader 2" 
-                      className="profile-pic w-12 h-12 rounded-full object-cover border-2 border-purple-600 shadow-lg mr-3"
+                      className="profile-pic w-26 h-36 rounded-full object-cover border-2 border-purple-600 shadow-lg mr-3"
                     />
                     <div>
-                      <h5 className="leader-details text-white font-medium">Amrit Raj</h5>
-                      <p className="leader-details text-gray-400 text-xs">Cofounder- Sheleads technologies</p>
+                      <h5 className="leader-details text-white font-medium">Patel Muhammad</h5>
+                      <p className="leader-details text-gray-400 text-xs">GSoC @2023,Fellowship @keploy</p>
                     </div>
                     <div className="flex ml-auto">
-                      <a href="https://www.linkedin.com/in/amritraj02" target="_blank" rel="noopener noreferrer" className="p-1 text-purple-400 hover:text-purple-300">
+                      <a href="https://www.linkedin.com/in/patel-muhammad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="p-1 text-purple-400 hover:text-purple-300">
                         <FaLinkedin className="social-icon text-lg" />
                       </a>
                     </div>
@@ -327,7 +326,7 @@ const Programs = () => {
               
               {/* Highlights */}
               <div>
-                <h4 className="text-white text-lg font-medium mb-4">Event Highlights</h4>
+                <h4 className="text-white text-lg font-medium mb-4">Program Overview</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="flex p-3 bg-black/30 rounded-lg">
                     <Lightbulb className="text-purple-500 h-5 w-5 mr-2 flex-shrink-0" />
@@ -345,17 +344,17 @@ const Programs = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="mt-6 pt-6 border-t border-white/10 flex justify-between items-center">
+                  
+              {/* <div className="mt-6 pt-6 border-t border-white/10 flex justify-between items-center">
                 <span className="text-purple-400 text-sm">Women's leadership initiative</span>
                 <Button
                   text="View Details"
-                  href="/events/hack4maha"
+                  href="/events"
                   variant="outline"
                   size="sm"
                   icon={<BookOpen className="ml-2 h-4 w-4" />}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           
