@@ -7,6 +7,7 @@ import Team from './pages/Team';
 import Upcoming from './pages/Upcoming';
 import Venue from './pages/Venue';
 import Programs from './pages/Programs';
+import Gallery from './pages/Gallery';
 // import Events from './pages/Events';
 // import Resources from './pages/Resources';
 // import Stories from './pages/Stories';
@@ -35,6 +36,9 @@ function App() {
 
         <section id="upcoming" >
           <Upcoming />
+        </section>
+        <section id="gallery">
+          <Gallery />
         </section>
            {/* <section id="events" className="py-0">
           <Events />

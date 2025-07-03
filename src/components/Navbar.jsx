@@ -47,6 +47,7 @@ const Navbar = () => {
     // { name: 'Success Stories', path: '/stories' },
     { name: 'Our Team', path: '#team' },
     // { name: 'Contact', path: '/contact' },
+    { name: 'Gallery', path: '#gallery' },
   ]
 
   const renderLink = (link) => {
@@ -117,9 +118,13 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-gray-800">
-            <div className="flex flex-col space-y-4 p-4">
-              {navLinks.map((link) => renderLink(link))}
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-br from-pink-700 via-purple-800 to-black/95 backdrop-blur-md border-t border-gray-800 shadow-2xl rounded-b-2xl animate-slideDown z-50">
+            <div className="flex flex-col space-y-4 p-6">
+              {navLinks.map((link) => (
+                <div key={link.name} className="rounded-xl bg-black/30 hover:bg-pink-600/30 transition-all duration-200 shadow-md px-4 py-3 text-center text-lg font-bold tracking-wide text-white active:scale-95">
+                  {renderLink(link)}
+                </div>
+              ))}
             </div>
           </div>
         )}
