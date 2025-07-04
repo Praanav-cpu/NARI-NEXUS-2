@@ -34,12 +34,15 @@ function App() {
           <Venue />
         </section> */}
 
-        {/* <section id="upcoming" >
+        <section id="upcoming">
           <Upcoming />
+        </section>
+        <section id="gallery">
+          <Gallery />
         </section>
            {/* <section id="events" className="py-0">
           <Events />
-        </section> */}
+      </sec</section>tion>  </section> */}
         {/* <section id="resources" className="py-0">
           <Resources />
         </section>
