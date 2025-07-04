@@ -34,11 +34,8 @@ function App() {
           <Venue />
         </section> */}
 
-        <section id="upcoming" >
+        {/* <section id="upcoming" >
           <Upcoming />
-        </section>
-        <section id="gallery">
-          <Gallery />
         </section>
            {/* <section id="events" className="py-0">
           <Events />
