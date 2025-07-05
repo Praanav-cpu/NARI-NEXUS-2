@@ -16,10 +16,28 @@ const images = [
 ];
 
 function Gallery() {
-  // Responsive: show all images in a single column on small screens
+  // Responsive: show all images in a single column on small screens .
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    // Trigger the animation after mount
+    setTimeout(() => setIsVisible(true), 100);
+  }, []);
+ 
   return (
-    <div className="gallery-section bg-gray-900">
-      <h2 id="gallery" className="text-4xl font-extrabold text-center mb-10 text-pink-400 tracking-wide uppercase drop-shadow-lg">Gallery</h2>
+    <div className="gallery-section bg-gray-900" style={{ fontFamily: '"Playfair Display", serif' }}>
+      <h2
+        id="gallery"
+        className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500 transition-all duration-1000 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+        } text-center tracking-wide drop-shadow-lg`}
+        style={{
+          fontFamily: '"Playfair Display", serif',
+          letterSpacing: '0.1em'
+        }}
+      >
+        Gallery
+      </h2>
       <div className="gallery-custom-grid">
         {/* Desktop/Tablet: 3 columns */}
         <div className="gallery-col">
